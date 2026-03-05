@@ -1,4 +1,13 @@
 const puppeteer = require('puppeteer');
+const { program } = require('commander');
+
+program
+  .name('safe-area-test')
+  .description('Launch Puppeteer with iOS-style safe area insets applied')
+  .option('-u, --url <url>', 'Target URL to open in the emulated device', 'http://localhost:3000');
+
+program.parse(process.argv);
+const options = program.opts();
 
 (async () => {
   // 1. Launch a visible browser window
@@ -28,15 +37,12 @@ const puppeteer = require('puppeteer');
     }
   });
 
-  // 4. Navigate to your local development server
-  const TARGET_URL = 'http://localhost:3000'; // Update this to match your dev server
-  
-  console.log(`Launching ${TARGET_URL} with native safe areas applied...`);
+  console.log(`Launching ${options.url} with native safe areas applied...`);
   
   try {
-    await page.goto(TARGET_URL);
+    await page.goto(options.url);
     console.log('✅ Success! The browser window will stay open until you close it or press Ctrl+C here.');
   } catch (error) {
-    console.error(`❌ Failed to load ${TARGET_URL}. Is your local server running?`);
+    console.error(`❌ Failed to load ${options.url}.`);
   }
 })();
