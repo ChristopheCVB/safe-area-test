@@ -1,0 +1,15 @@
+{
+  "name": "Pixel 8 Pro",
+  "viewport": {
+    "width": 412,
+    "height": 915,
+    "isMobile": true,
+    "hasTouch": true
+  },
+  "safeAreaInsets": {
+    "top": 32,
+    "right": 0,
+    "bottom": 24,
+    "left": 0
+  }
+}

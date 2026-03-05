@@ -1,0 +1,15 @@
+{
+  "name": "iPhone 14 Pro",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "isMobile": true,
+    "hasTouch": true
+  },
+  "safeAreaInsets": {
+    "top": 47,
+    "right": 0,
+    "bottom": 34,
+    "left": 0
+  }
+}
